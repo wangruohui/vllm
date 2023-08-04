@@ -183,8 +183,14 @@ def main(args: argparse.Namespace):
         prompt_len + output_len
         for _, prompt_len, output_len in requests
     )
+    total_new_tokens = sum(
+        output_len
+        for _, _, output_len in requests
+    )
     print(f"Throughput: {len(requests) / elapsed_time:.2f} requests/s, "
           f"{total_num_tokens / elapsed_time:.2f} tokens/s")
+    print(f"Throughput (output): "
+          f"{total_new_tokens / elapsed_time:.2f} tokens/s")
 
 
 if __name__ == "__main__":

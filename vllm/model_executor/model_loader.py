@@ -24,6 +24,7 @@ _MODEL_REGISTRY = {
     "MPTForCausalLM": MPTForCausalLM,
     "OPTForCausalLM": OPTForCausalLM,
     "RWForCausalLM": FalconForCausalLM,
+    "InternLMForCausalLM": InternLMForCausalLM,
 }
 
 
