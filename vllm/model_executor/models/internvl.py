@@ -198,8 +198,9 @@ def input_processor_for_internvl(ctx: InputContext, llm_inputs: LLMInputs):
     prompt_token_ids = llm_inputs["prompt_token_ids"]
     if prompt is None:
         prompt = tokenizer.decode(prompt_token_ids)
+    use_thumbnail = int(num_blocks > 1)
     image_prompt = IMG_START + IMG_CONTEXT * (num_blocks +
-                                              1) * num_patches + IMG_END
+                                              use_thumbnail) * num_patches + IMG_END
     new_prompt = prompt.replace('<image>', image_prompt, 1)
     new_prompt_token_ids = tokenizer.encode(new_prompt)
 
