@@ -1,6 +1,6 @@
 # formatting
 yapf==0.32.0
-pylint==2.8.2
+pylint==4.0.9
 
 # type checking
 mypy==0.991
